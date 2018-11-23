@@ -1,0 +1,11 @@
+nginx.conf启动方式
+
+docker build -t monkey-nginx:v1 .
+docker run -d -p 80:80 -v /usr/local/nginx/nginx.conf:/etc/nginx/nginx.conf monkey-nginx:v1
+
+
+
+default.conf启动方式
+
+
+docker run -p 80:80 --name myNginx -v /usr/local/nginx/default.conf:/etc/nginx/conf.d/default.conf -d monkey-nginx:v1 
